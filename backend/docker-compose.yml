@@ -3,7 +3,7 @@ version: '3'
 services:
   web:
     build: .
-    command: bash -c "python manage.py runserver 0.0.0.0:8000"
+    command: ["sh", "scripts/start.sh"]
     container_name: api
     volumes:
       - .:/api
@@ -38,7 +38,17 @@ services:
     volumes:
       - rabbitmq_data:/var/lib/rabbitmq
 
-    
+
+  celery:  
+    build: .
+    command: celery -A api worker --loglevel=info
+    container_name: celery
+    volumes:
+      - .:/api
+    restart: always
+    depends_on:
+      - rabbitmq  
+
 
 volumes:
   pgdata: {}
