@@ -1,5 +1,9 @@
 import os
-from apps.proposta.models import Formulario , Campo
+import sys
+
+import django
+
+from apps.proposta.models import Campo, Formulario
 
 class Seeder:
 
@@ -7,6 +11,11 @@ class Seeder:
         self.formulario = []
         self.campos = []
 
+
+    def limpa_db(self):
+        if '--flush' in sys.argv:
+            print('\t- Limpando o DB para o Seed\n')
+            os.system('./manage.py flush --no-input')
 
     def create_formulario(self):
         print('\t- Criando formulario...')
@@ -44,3 +53,10 @@ class Seeder:
 
 if __name__=='__main__':
     
+    os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'api.settings')
+    django.setup()
+
+    seeder = Seeder()
+
+    print('Iniciando o Seed...\n') 
+    seeder.create_formulario()

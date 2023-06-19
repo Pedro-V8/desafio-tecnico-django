@@ -1,3 +1,5 @@
+from datetime import datetime
+
 from django.db import models
 
 # Create your models here.
@@ -9,7 +11,7 @@ class Formulario(models.Model):
         verbose_name_plural = "Formularios"
 
     status = models.BooleanField()
-    created_at = models.DateTimeField()
+    created_at = models.DateTimeField(default=datetime.now)
 
     def __str__(self):
         return str(self.id)
