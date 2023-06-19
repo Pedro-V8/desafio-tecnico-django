@@ -44,4 +44,4 @@ docker-compose up
 
 A API está servida na url: http://localhost:8000/
 
-Já o frontend servido na url: http://localhost:3000/
+Já o Frontend servido na url: http://localhost:3000/
