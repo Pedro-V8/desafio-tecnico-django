@@ -20,7 +20,7 @@ class Seeder:
     def create_capos(self):
         print('\t- Criando campos...')
         formulario = Formulario.objects.first()
-        
+
         self.camps = Campo.objects.bulk_create([
             Campo(
                 nome_campo='Nome Teste',
@@ -41,3 +41,6 @@ class Seeder:
                 id_formulario=formulario,
             )])
         print('\t  Successfully created', len(self.campo), 'campus', '\n')
+
+if __name__=='__main__':
+    
