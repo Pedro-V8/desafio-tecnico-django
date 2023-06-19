@@ -11,6 +11,9 @@ class Formulario(models.Model):
     status = models.BooleanField()
     created_at = models.DateTimeField()
 
+    def __str__(self):
+        return str(self.id)
+
 
 class Campo(models.Model):
     class Meta:
