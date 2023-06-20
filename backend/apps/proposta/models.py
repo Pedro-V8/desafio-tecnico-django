@@ -2,7 +2,15 @@ from datetime import datetime
 
 from django.db import models
 
-# Create your models here.
+
+"""
+O Banco foi estruturado da seguinte forma:
+    - Formulario: Representa um formulário que pode ser criado pelo administrador do sistema.
+    - Campo: Representa um campo do formulário que pode ser criado pelo administrador do sistema (Ex: Nome, Endereço, Valor do empréstimo...).
+    - Registro: Representa um registro de um formulário que pode ser preenchido pelo usuário do sistema.
+    - PropostaRegistro: Representa uma proposta de empréstimo que pode ser aprovada ou negada, função essa determinada pelo celery de acordo com o documento do desafio.
+
+"""
 
 
 class Formulario(models.Model):

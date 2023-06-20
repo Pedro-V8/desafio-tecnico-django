@@ -3,6 +3,9 @@ from rest_framework import serializers
 from .models import Campo, Formulario, Registro
 
 
+# Seriliazers para o Django Rest Framework, o único model que não possui um serializer é o PropostaRegistro, pois ele não é utilizado na API, somente pelo Celery.
+
+
 class CampoSerializer(serializers.ModelSerializer):
     class Meta:
         model = Campo

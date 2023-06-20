@@ -7,7 +7,13 @@ from services.gera_protocolo import Protocolo
 from .models import Campo, Formulario, Registro
 from .serializers import CampoSerializer, FormularioSerializer, RegistroSerializer
 
-# Create your views here.
+
+"""
+    Definição das ViewsSets para as Urls, cada ViewSet possui um queryset e um serializer_class, que são utilizados pelo Django Rest Framework para
+    definir o que será retornado pela API.
+    Vale ressaltar que o RegistroViewSet possui uma característica diferente, pois ele é responsável por salvar cada registro novo com um protocolo único
+    para que o celery possa avaliar a proposta de empréstimo. Assim cada prosposta está identificada com um protocolo para a identificação pelo administrador
+"""
 
 
 class RegistroViewSet(viewsets.ModelViewSet):
