@@ -14,6 +14,12 @@ Tecnologias Utiliadas:
 
 ## Instalção
 
+Clonar o repositório com o seguinte comando:
+
+```bash
+git clone https://github.com/Pedro-V8/desafio-tecnico-django.git
+```
+
 Primeiramente será necessário entrar no diretório "backend":
 
 ```bash
